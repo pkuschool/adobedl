@@ -1,0 +1,16 @@
+html{
+    font-family: 'PingFang SC', '思源黑体', 'Microsoft Yahei UI', monospace;
+}
+
+#main-title{
+    margin-top: 0px;
+}
+.whitetxt{
+    color: white !important;
+}
+.indicator{
+    background-color: white !important;
+}
+h1{
+    font-weight: 300;
+}
