@@ -2,5 +2,5 @@
 
 $(document).ready(function () {
     $('.tabs').tabs();
-});//Tabs
+}); //Tabs
 
