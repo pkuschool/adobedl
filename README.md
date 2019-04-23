@@ -18,5 +18,6 @@
 ## 开源库使用
 
 - [Materialize](https://materializecss.com/)
+  - 注意！你需要先熟悉其使用才能开始开发
 - Jquery
 
