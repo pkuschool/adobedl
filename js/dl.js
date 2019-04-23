@@ -43,15 +43,41 @@ if (!window.open) {
 function dl(type = -1, id = -1) { //
     if (type != -1 && id != -1) {
         try {
+            M.toast({
+                html: '即将开始下载...'
+            })
             window.open(svr + dest[type][id], '_self');
             console.log("Initiated download at " + svr + dest[type][id])
+
         } catch {
-            M.Toast({
+            M.toast({
                 html: '调用错误：type=' + type + ' id=' + id
             })
-            console.error('Unexpected type or ID: type=' + type + ' id=' + id)
+            console.error('Dl: Unexpected type or ID: type=' + type + ' id=' + id)
         }
 
     }
 
 }
+function cpy(type=-1, id=-1) {
+    if (type != -1 && id != -1) {
+        try {
+
+            var cpybtn = document.getElementById('copybtn');
+            cpybtn.setAttribute('data-clipboard-text', svr + dest[type][id])
+            cpybtn.click();
+            M.toast({
+                html: '复制完成'
+            })
+            console.log("Initiated link copy at " + svr + dest[type][id])
+
+        } catch {
+            M.toast({
+                html: '复制调用错误：type=' + type + ' id=' + id
+            })
+            console.error('Cpy: Unexpected type or ID: type=' + type + ' id=' + id)
+        }
+
+    }
+}
+new ClipboardJS('#copybtn');

@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Init JQuery -->
+    <!-- Init clipboard.js and JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -65,7 +66,11 @@
             <div class="card-panel row">
                 <img src="./img/adobe.png" alt="" class="softimg col s2">
                 <span class="softtitle col s9">Adobe Acrobat DC</span>
-                <button class="btn right" onclick="javascript:dl(0,0)"><i class="material-icons right">file_download</i>下载</button>
+                <div class="right">
+                    <button class="btn" onclick="javascript:cpy(0,0)"><i
+                            class="material-icons right">link</i>复制链接</button>
+                    <button class="btn" onclick="javascript:dl(0,0)"><i class="material-icons right">file_download</i>下载</button>
+                </div>
             </div>
         </div>
         <div id="about">
@@ -74,5 +79,7 @@
         </div>
     </div>
 </body>
+<button class="hide" id="copybtn"
+    data-clipboard-text=""></button>
     <script src="./js/dl.js"></script>
 </html>
