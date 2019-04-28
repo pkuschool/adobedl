@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adobe 软件下载页</title>
 
-    <!-- init Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- init Icons (No longer available due to CDN switch) -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Init clipboard.js and JQuery -->
@@ -30,6 +30,13 @@
             </ul>
         </div>
     </nav> -->
+    <div class="red white-text center-align" id="warn">
+        <span  style="width: 100%" id="warnmsg">您没有开启JavaScript，因而无法正常进行操作。</span>
+    </div>
+    <script>
+        document.getElementById('warn').style.height=0
+        document.getElementById('warnmsg').innerHTML=""
+    </script>
     <div class="top teal center-align white-text z-depth-2"
         style="width: 100%;padding-top: 35px;padding-bottom: 35px;padding-left: 20px;padding-right: 20px;">
         <img src="./img/adobe.png" alt="Adobe" height="100px" width="100px" style="margin-bottom: 20px;">
