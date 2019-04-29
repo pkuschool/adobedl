@@ -34,12 +34,12 @@
         <span  style="width: 100%" id="warnmsg">您没有开启JavaScript，因而无法正常进行操作。</span>
     </div>
     <script>
-        document.getElementById('warn').style.height=0
+        document.getElementById('warn').style
         document.getElementById('warnmsg').innerHTML=""
     </script>
     <div class="top teal center-align white-text z-depth-2"
         style="width: 100%;padding-top: 35px;padding-bottom: 35px;padding-left: 20px;padding-right: 20px;">
-        <img src="./img/adobe.png" alt="Adobe" height="100px" width="100px" style="margin-bottom: 20px;">
+        <img src="./img/adobe.png" alt="Adobe"" width="100px" style="margin-bottom: 20px;">
         <h1 class="center-align white-text" id="main-title">北大附中 Adobe 下载中心</h1>
         <p>在这里你可以下载到学校购买的正版 Adobe，无需担心版权问题。</p>
         <p>所有软件均需要在校内激活。</p>
@@ -62,28 +62,325 @@
     <div class="container">
         <div id="macos">
             <h1>MacOS</h1>
-            <div class="card-panel row">
-                <img src="./img/adobe.png" alt="" class="softimg col s2">
-                <span class="softtitle col s9">Adobe Acrobat DC</span>
-                <button class="btn right" onclick="dl(1,0)"><i class="material-icons right">file_download</i>下载</button>
+            <div class="card-panel row hoverable">
+                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Acrobat DC</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,0)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,0)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
             </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ae.png" alt="" class="softimg col">
+                <span class="softtitle col s9">After Effects</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,1)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,1)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ai.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Illustrator</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,2)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,2)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Animator</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,3)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,3)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Au.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Audition</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,4)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,4)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Br.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Bridge</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,5)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,5)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Dw.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Dreamweaver</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,6)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,6)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ic.png" alt="" class="softimg col">
+                <span class="softtitle col s9">InCopy</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,7)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,7)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Id.png" alt="" class="softimg col">
+                <span class="softtitle col s9">InDesign</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,8)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,8)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Lr.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Lightroom Classic</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,9)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,9)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Media Encoder</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,10)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,10)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Pl.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Prelude</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,11)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,11)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Pr.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Premiere Pro</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,12)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,12)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ps.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Photoshop</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,13)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,13)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Sc.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Scan</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(1,14)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(1,14)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+
         </div>
         <div id="win64">
             <h1>Windows</h1>
             <div class="card-panel row hoverable">
-                <img src="./img/adobe.png" alt="" class="softimg col" height="50px">
-                <span class="softtitle col s9">Adobe Acrobat DC</span>
+                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Acrobat DC</span>
                 <div class="softbtns right">
                     <button class="btn white teal-text" onclick="javascript:cpy(0,0)"><i
                             class="material-icons">content_copy</i></button>
                     <button class="btn hide-on-small-only" onclick="javascript:dl(0,0)"><i class="material-icons left">file_download</i>下载</button>
                 </div>
             </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ae.png" alt="" class="softimg col">
+                <span class="softtitle col s9">After Effects</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,1)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,1)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ai.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Illustrator</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,2)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,2)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Animator</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,3)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,3)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Au.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Audition</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,4)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,4)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Br.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Bridge</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,5)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,5)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Dw.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Dreamweaver</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,6)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,6)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ic.png" alt="" class="softimg col">
+                <span class="softtitle col s9">InCopy</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,7)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,7)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Id.png" alt="" class="softimg col">
+                <span class="softtitle col s9">InDesign</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,8)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,8)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Lr.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Lightroom Classic</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,9)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,9)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Media Encoder</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,10)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,10)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Pl.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Prelude</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,11)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,11)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Pr.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Premiere Pro</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,12)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,12)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Ps.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Photoshop</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,13)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,13)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+            <div class="card-panel row hoverable">
+                <img src="./img/Sc.png" alt="" class="softimg col">
+                <span class="softtitle col s9">Scan</span>
+                <div class="softbtns right">
+                    <button class="btn white teal-text" onclick="javascript:cpy(0,14)"><i
+                            class="material-icons">content_copy</i></button>
+                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,14)"><i
+                            class="material-icons left">file_download</i>下载</button>
+                </div>
+            </div>
+
         </div>
         <div id="about">
             <h1>关于</h1>
+            <p>刘语辰 制作</p>
             <p>2019-2020 北京大学附属中学 版权所有</p>
+            <p>版本 1.0.0</p>
+
+            <h1>美术资源</h1>
+            <p>使用了<a href="http://www.iconarchive.com/show/adobe-cc-circles-icons-by-killaaaron.html"> KillerAaron 的图标组</a>，感谢！</p>
+
+            <h1>联系作者</h1>
+            <button onclick="window.open('mailto:liuyuchen1@i.pkuschool.edu.cn')" class="btn waves-effect waves-light"><i class=" material-icons left">send</i>邮箱联系</button>
+
         </div>
+        <br><br><br><br><br>
     </div>
 </body>
 <button class="hide" id="copybtn"
