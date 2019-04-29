@@ -3,7 +3,6 @@ var dest = [ //Files List
     [ //Windows
         "Adobe%20Acrobat%20DC%20_Win_X64.zip",
         "Ae_Win64.zip",
-
         "Ai_win64.zip",
         "An_win64.zip",
         "Au_Win64.zip",
@@ -44,10 +43,10 @@ function dl(type = -1, id = -1) { //
     if (type != -1 && id != -1) {
         try {
             M.toast({
-                html: '即将开始下载...'
+                html: '即将开始下载: '+dest[type][id]
             })
-            window.open(svr + dest[type][id], '_self');
-            console.log("Initiated download at " + svr + dest[type][id])
+            window.open(svr + dest[type][id], '_self')
+            console.log("Initiated download at " + svr + dest[type][id]);
 
         } catch {
             M.toast({
@@ -67,7 +66,7 @@ function cpy(type=-1, id=-1) {
             cpybtn.setAttribute('data-clipboard-text', svr + dest[type][id])
             cpybtn.click();
             M.toast({
-                html: '复制完成'
+                html: '复制完成: '+ dest[type][id]
             })
             console.log("Initiated link copy at " + svr + dest[type][id])
 
