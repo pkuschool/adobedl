@@ -17,8 +17,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Customs go the last! -->
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/UA.js"></script><!-- Thanks! http://www.cnblogs.com/hykun/p/Ua.html -->
     <script src="./js/init.js"></script>
     <link rel="shortcut icon" href="./favicon.ico" />
+    <script>
+        if(client.engine.trident){
+            window.location.assign("unsupported.html")
+        }
+    </script>
 </head>
 
 <body class="teal lighten-4">
@@ -229,8 +235,8 @@
                 <div class="softbtns right">
                     <button class="btn white teal-text" onclick="javascript:cpy(0,0)"><i
                             class="material-icons">content_copy</i></button>
-                    <button class="btn hide-on-small-only" onclick="javascript:dl(0,0)"><i class="material-icons left">file_download</i>下载</button>
-                </div>
+                            <button class="btn hide-on-small-only" onclick="javascript:dl(0,0)"><i class="material-icons left">file_download</i>下载</button>
+                        </div>
             </div>
             <div class="card-panel row hoverable">
                 <img src="./img/Ae.png" alt="" class="softimg col">
@@ -418,7 +424,6 @@
 <button class="hide" id="copybtn"
     data-clipboard-text=""></button>
     <script src="./js/dl.js"></script>
-    <script src="./js/UA.js"></script><!-- Thanks! http://www.cnblogs.com/hykun/p/Ua.html -->
     <script>
         var mactrig = document.getElementById('mactriggerson')
         if(client.system.mac){
@@ -427,8 +432,6 @@
         var cli = document.getElementById("clientinfo")
         var clistr = clientInformation.userAgent;
         cli.innerHTML = clistr
-        if(client.engine.trident){
-            alert("你的浏览器不受支持，很可能无法正常工作。")
-        }
+
     </script>
 </html>
