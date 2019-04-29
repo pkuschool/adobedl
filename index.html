@@ -57,7 +57,7 @@
                 <ul class="tabs transparent white-text">
                     <!-- <li class="tab col s3 whitetxt" style="visibility: hidden;width: 0px !important;"><a href="#select" class="whitetxt">Windows x64</a></li> -->
                     <li class="tab col s3 whitetxt"><a href="#win64" class="whitetxt">Windows x64</a></li>
-                    <li class="tab col s3 whitetxt"><a class="whitetxt" href="#macos">macOS</a></li>
+                    <li class="tab col s3 whitetxt" id="mactrigger"><a class="whitetxt" href="#macos">macOS</a></li>
                     <!-- <li class="tab col s3 whitetxt"><a href="#about" class="whitetxt">关于</a></li> -->
                 </ul>
             </div>
@@ -375,7 +375,7 @@
         </div>
         <br><br><br><br><br>
     </div>
-    <div id="aboutmodal" class="modal teal darken-1">
+    <div id="aboutmodal" class="modal teal darken-1 modal-fixed-footer">
         <div class="modal-content white-text">
             <h1>关于</h1>
                 <p>@smallg0at 制作</p>
@@ -388,7 +388,10 @@
 
                 <h2>联系作者</h2>
                 <button onclick="window.open('mailto:liuyuchen1@i.pkuschool.edu.cn', '_blank')"
-                    class="btn waves-effect waves-light"><i class=" material-icons left">send</i>邮箱联系</button>
+                    class="btn waves-effect waves-light"><i class=" material-icons left">send</i>邮箱联系</button><br><br>
+
+                <h2>浏览器信息</h2>
+                <p id="clientinfo"></p>
         </div>
         <div class="modal-footer teal darken-2 white-text">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat col s12 white-text"><i class=" material-icons">close</i></a>
@@ -407,4 +410,13 @@
 <button class="hide" id="copybtn"
     data-clipboard-text=""></button>
     <script src="./js/dl.js"></script>
+    <script src="./js/UA.js"></script>//Thanks! http://www.cnblogs.com/hykun/p/Ua.html
+    <script>
+        if(client.system.mac){
+            select(document.getElementById("mactrigger"))
+        }
+        var cli = document.getElementById("clientinfo")
+        var clistr = clientInformation.userAgent;
+        cli.innerHTML = clistr
+    </script>
 </html>
