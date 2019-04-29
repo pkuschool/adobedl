@@ -57,8 +57,8 @@
             <div class="col s12" style="margin: 0 auto !important;">
                 <ul class="tabs transparent white-text">
                     <!-- <li class="tab col s3 whitetxt" style="visibility: hidden;width: 0px !important;"><a href="#select" class="whitetxt">Windows x64</a></li> -->
-                    <li class="tab col s3 whitetxt"><a href="#win64" class="whitetxt">Windows x64</a></li>
-                    <li class="tab col s3 whitetxt" id="mactrigger"><a class="whitetxt" href="#macos">macOS</a></li>
+                    <li class="tab col s3 whitetxt" id="wintrigger"><a href="#win64" class="whitetxt">Windows x64</a></li>
+                    <li class="tab col s3 whitetxt" id="mactrigger"><a class="whitetxt" href="#macos" id="mactriggerson">macOS</a></li>
                     <!-- <li class="tab col s3 whitetxt"><a href="#about" class="whitetxt">关于</a></li> -->
                 </ul>
             </div>
@@ -420,8 +420,9 @@
     <script src="./js/dl.js"></script>
     <script src="./js/UA.js"></script><!-- Thanks! http://www.cnblogs.com/hykun/p/Ua.html -->
     <script>
+        var mactrig = document.getElementById('mactriggerson')
         if(client.system.mac){
-            select(document.getElementById("mactrigger"))
+            $('#mactriggerson').addClass('active')
         }
         var cli = document.getElementById("clientinfo")
         var clistr = clientInformation.userAgent;
