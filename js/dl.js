@@ -39,7 +39,7 @@ if (!window.open) {
     console.warn('Some critical functions are not there. Function may ba limited.')
 }
 
-function dl(type = -1, id = -1) { //
+function dl(type = -1, id = -1) {
     if (type != -1 && id != -1) {
         try {
             M.toast({

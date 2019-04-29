@@ -52,7 +52,7 @@
               <button data-target="aboutmodal" class="btn modal-trigger teal lighten-5 teal-text"><i class="material-icons left">info</i>关于</button>
         </div>
     </div>
-    <div class="row teal darken-2 center-align  z-depth-2">
+    <div class="row teal darken-2 center-align  z-depth-2" id="tabs">
         <div class="container">
             <div class="col s12" style="margin: 0 auto !important;">
                 <ul class="tabs transparent white-text">
@@ -66,7 +66,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container" id="contents">
         <div id="macos">
             <h1>MacOS</h1>
             <div class="card-panel row hoverable">
@@ -407,6 +407,13 @@
             <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">完成</a>
         </div>
     </div>
+    <div id="unsupportmodal" class="modal">
+        <div class="modal-content">
+            <h1>您的浏览器不受支持</h1>
+            <p>您的浏览器过老、过于奇葩，我们暂时不支持此浏览器。</p>
+            <p>请使用Chrome、Firefox、Edge等现代浏览器。</p>
+        </div>
+    </div>
 </body>
 <button class="hide" id="copybtn"
     data-clipboard-text=""></button>
@@ -419,5 +426,8 @@
         var cli = document.getElementById("clientinfo")
         var clistr = clientInformation.userAgent;
         cli.innerHTML = clistr
+        if(client.engine.trident){
+            alert("你的浏览器不受支持，很可能无法正常工作。")
+        }
     </script>
 </html>
