@@ -43,22 +43,23 @@ function dl(type = -1, id = -1) { //
     if (type != -1 && id != -1) {
         try {
             M.toast({
-                html: '即将开始下载: '+dest[type][id]
+                html: '即将开始下载: ' + dest[type][id]
             })
             window.open(svr + dest[type][id], '_self')
             console.log("Initiated download at " + svr + dest[type][id]);
 
-        } catch {
+        } catch(e) {
             M.toast({
-                html: '调用错误：type=' + type + ' id=' + id
+                html: '调用错误：type=' + type + ' id=' + id + " - " + e
             })
-            console.error('Dl: Unexpected type or ID: type=' + type + ' id=' + id)
+            console.error('Dl: Error: type=' + type + ' id=' + id + " - " + e)
         }
 
     }
 
 }
-function cpy(type=-1, id=-1) {
+
+function cpy(type = -1, id = -1) {
     if (type != -1 && id != -1) {
         try {
 
@@ -66,15 +67,15 @@ function cpy(type=-1, id=-1) {
             cpybtn.setAttribute('data-clipboard-text', svr + dest[type][id])
             cpybtn.click();
             M.toast({
-                html: '复制完成: '+ dest[type][id]
+                html: '复制完成: ' + dest[type][id]
             })
             console.log("Initiated link copy at " + svr + dest[type][id])
 
-        } catch {
+        } catch (e) {
             M.toast({
-                html: '复制调用错误：type=' + type + ' id=' + id
+                html: '复制调用错误：type=' + type + ' id=' + id + " - " + e
             })
-            console.error('Cpy: Unexpected type or ID: type=' + type + ' id=' + id)
+            console.error('Cpy: Error: type=' + type + ' id=' + id + " - " + e)
         }
 
     }
