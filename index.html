@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Init clipboard.js and JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Customs go the last! -->
@@ -41,8 +41,8 @@
         <span  style="width: 100%" id="warnmsg">您没有开启JavaScript，因而无法正常进行操作。</span>
     </div>
     <script>
-        document.getElementById('warn').style
-        document.getElementById('warnmsg').innerHTML=""
+        $('#warn').hide();
+        $('#warnmsg').innerHTML = ""
     </script>
     <div class="top teal center-align white-text z-depth-2"
         style="width: 100%;padding-top: 35px;padding-bottom: 35px;padding-left: 20px;padding-right: 20px;">
@@ -63,8 +63,8 @@
             <div class="col s12" style="margin: 0 auto !important;">
                 <ul class="tabs transparent white-text">
                     <!-- <li class="tab col s3 whitetxt" style="visibility: hidden;width: 0px !important;"><a href="#select" class="whitetxt">Windows x64</a></li> -->
-                    <li class="tab col s3 whitetxt" id="wintrigger"><a href="#win64" class="whitetxt">Windows x64</a></li>
-                    <li class="tab col s3 whitetxt" id="mactrigger"><a class="whitetxt" href="#macos" id="mactriggerson">macOS</a></li>
+                    <li class="tab col s3 whitetxt" id="wintrigger"><a href="#win64" class="whitetxt" id="winlabel">Windows x64</a></li>
+                    <li class="tab col s3 whitetxt" id="mactrigger"><a class="whitetxt" href="#macos" id="maclabel">macOS</a></li>
                     <!-- <li class="tab col s3 whitetxt"><a href="#about" class="whitetxt">关于</a></li> -->
                 </ul>
             </div>
@@ -259,7 +259,7 @@
                 </div>
             </div>
             <div class="card-panel row hoverable">
-                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <img src="./img/An.png" alt="" class="softimg col">
                 <span class="softtitle col s9">Animator</span>
                 <div class="softbtns right">
                     <button class="btn white teal-text" onclick="javascript:cpy(0,3)"><i
@@ -329,7 +329,7 @@
                 </div>
             </div>
             <div class="card-panel row hoverable">
-                <img src="./img/acrobat.png" alt="" class="softimg col">
+                <img src="./img/Me.png" alt="" class="softimg col">
                 <span class="softtitle col s9">Media Encoder</span>
                 <div class="softbtns right">
                     <button class="btn white teal-text" onclick="javascript:cpy(0,10)"><i
@@ -387,11 +387,16 @@
             <h1>关于</h1>
                 <p>@smallg0at 制作</p>
                 <p>2019-2020 北京大学附属中学 版权所有</p>
-                <p>版本 1.0.0</p>
+                <p>版本 1.1.0</p>
 
                 <h2>美术资源</h2>
                 <p>使用了<a href="http://www.iconarchive.com/show/adobe-cc-circles-icons-by-killaaaron.html" class="teal-text text-lighten-4"> KillerAaron
                         的图标组</a>，感谢！</p>
+                <p>添加了：An图标</p>
+                <p>修改了：Fw、Sg图标的重心</p>
+                <p>以及<a href="http://www.iconarchive.com/show/yosemite-adobe-cc-dark-icons-by-ziggy19.html"
+                        class="teal-text text-lighten-4"> Yosemite
+                        Adobe CC Dark Icons by Ziggy19 </a>的Me图标</p>
 
                 <h2>联系作者</h2>
                 <button onclick="window.open('mailto:liuyuchen1@i.pkuschool.edu.cn', '_blank')"
@@ -425,13 +430,24 @@
     data-clipboard-text=""></button>
     <script src="./js/dl.js"></script>
     <script>
-        var mactrig = document.getElementById('mactriggerson')
         if(client.system.mac){
-            $('#mactriggerson').addClass('active')
+            $('#maclabel').addClass('active')
+            $('#maclabel').html('macos（当前操作系统）')
         }
-        var cli = document.getElementById("clientinfo")
-        var clistr = clientInformation.userAgent;
-        cli.innerHTML = clistr
+        if(client.system.win){
+            if((clientInformation.userAgent).indexOf('x64')){
+                $('#winlabel').html('Windows X64（当前操作系统）')
+            }else{
+                $('#winlabel').html('Windows X64（不支持当前操作系统）')
+                M.toast({html:'您目前正在使用的计算机安装了32位系统，不支持安装'})
+            }
+            if(client.system.win == 'XP'){
+                M.toast({html: "您的系统过老，请更新系统或更换计算机"})
+            }
+
+        }
+        $('#clientinfo').html(clientInformation.userAgent)
+
 
     </script>
 </html>
