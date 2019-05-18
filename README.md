@@ -2,6 +2,8 @@
 <img src="./img/adobe.png" width=200 height=200 align=center>
 
 # Adobe-dl
+![](https://img.shields.io/badge/Type-Static%20Website-orange.svg)
+![](https://img.shields.io/badge/Code%20Quality-sucks-red.svg)
 
 由于学校原来的[Adobe 下载页面]()太差，故直接重制。
 
