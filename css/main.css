@@ -47,7 +47,7 @@ h1 {
     font-weight: 300;
 }
 
-@media only screen and (max-width: 1000000px) {
+/* @media only screen and (max-width: 1000000px) {
     .tabs {
         display: -webkit-box;
         display: -webkit-flex;
@@ -65,7 +65,7 @@ h1 {
     .tabs .tab a {
         padding: 0 12px;
     }
-}
+} */
 
 .softtitle {
     margin-top: 5px;
@@ -111,4 +111,12 @@ iframe{
 
 .tab{
     text-transform: none !important;
+}
+
+.no-select{
+    user-select: none;
+}
+
+li.indicator{
+    box-shadow: 0px -1px 5px 1px white;
 }
