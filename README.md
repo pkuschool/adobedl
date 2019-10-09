@@ -2,8 +2,8 @@
 <img src="./img/adobe.png" width=200 height=200 align=center>
 
 # Adobe-dl
-![](https://img.shields.io/badge/Type-Static%20Website-orange.svg)
-![](https://img.shields.io/badge/Code%20Quality-sucks-red.svg)
+![](https://img.shields.io/badge/Type-Website-orange.svg)
+![](https://img.shields.io/badge/Code%20Quality-fine-green.svg)
 
 由于学校原来的[Adobe 下载页面](http://portal.pkuschool.edu.cn:81/adobe/all.html)太差，故直接重制。
 
@@ -11,9 +11,10 @@
 
 ## 路线图
 
-- [ ] 使用前端框架（原谅我在写的时候还没学 Vue...）
-- [ ] 信息进一步 JSON 化
+- [x] 使用前端框架（原谅我在写的时候还没学 Vue...）
+- [x] 信息进一步 JSON 化
 - [ ] 改善UI
+  - [ ] 重新调色/设计
   - [ ] 加个搜索框
 
 ## 开发文档
@@ -22,19 +23,20 @@
 - 开头init的JS代码请移步 ./js/init.js
 - 自定义的CSS代码请移步 /css/main.css
   - 注意！请尽量使用Class/ID来进行styling
-- 请尽量不要使用 GitHub Pages 自带的各种系统，这样会使我在本地难以调试。
+- ~~请尽量不要使用 GitHub Pages 自带的各种系统，这样会使我在本地难以调试。~~ 真香！
 
 ## 未来发展
 
 这些是这个项目的未来目标，但是——不一定会做！
 
-- [ ] 用Vue渲染
+- [x] 用Vue渲染
 - [ ] 正常的标题栏
 - [ ] 搜索功能
 
 ## 开源库使用
 
 - [Materialize](https://materializecss.com/)
-  - 注意！你需要先熟悉其使用才能开始开发
-- Jquery
+- Vue.js
+- Clipboard.js
+  - Dependency: Jquery
 

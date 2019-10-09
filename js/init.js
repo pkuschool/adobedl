@@ -1,9 +1,4 @@
 // Getting elements working...
 
-$(document).ready(function () {
-    $('.tabs').tabs();
-}); //Tabs
-
-$(document).ready(function () {
-    $('.modal').modal();
-});//Modal
+    var tabsInstance = M.Tabs.init(document.querySelectorAll('.tabs'))
+    var modalInstance = M.Modal.init(document.querySelectorAll('.modal'))
