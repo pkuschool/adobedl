@@ -33,6 +33,13 @@ html {
 
 #main-title {
     margin-top: 0px;
+    font-size: 3.5rem;
+}
+@media all and (max-width: 600px){
+    #main-title{
+        font-size: 26px;
+        font-weight: bold;
+    }
 }
 
 .whitetxt {
@@ -117,6 +124,22 @@ iframe{
     user-select: none;
 }
 
-li.indicator{
+/* li.indicator{
     box-shadow: 0px -1px 5px 1px white;
+} */
+
+#search-box{
+    padding: 0px 12px 0px 12px;
+    background-color: #ffffff;
+    height: calc(48px - 1rem);
+    margin-bottom: .5rem;
 }
+
+
+#search-text, #search-text:active, #search-text:focus{
+    border: none !important;
+    box-shadow: none;
+    /* margin-bottom: 2px; */
+    height: 33px;
+}
+

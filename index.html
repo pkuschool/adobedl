@@ -30,68 +30,78 @@
     </noscript>
     <div class="top red darken-4 center-align white-text z-depth-2" style="width: 100%;padding-top: 35px;padding-bottom: 10px;padding-left: 20px;padding-right: 20px;">
         <h1 class="center-align white-text" id="main-title">北大附中 Adobe 下载中心</h1>
-        <p>在这里你可以下载到学校购买的正版 Adobe，无需担心版权问题。所有软件均需要在校内激活。</p>
-        <p>您可以使用 Ctrl+F 来寻找软件。安装方法请参照教程。</p>
+        <div id="site-info" class=" hide-on-small-only">
+            <p>在这里你可以下载到学校购买的正版 Adobe，无需担心版权问题。所有软件均需要在校内激活。</p>
+            <p>您可以使用 Ctrl+F 来寻找软件。安装方法请参照教程。</p>
+        </div>
         <div class="row no-select">
             <a class="btn red lighten-5 black-text rounded" href="https://mp.weixin.qq.com/s/AnYEDpmjStCpbPbMNd8IWg" target="_blank"><i class="material-icons left">book</i>教程</a>
             <a data-target="aboutmodal" class="btn modal-trigger red lighten-5 black-text rounded"><i class="material-icons left">info</i>关于</a>
         </div>
     </div>
-    <div class="row red darken-3 center-align  z-depth-2" id="tabs" style="position: sticky;top: 0px">
-        <div class="container">
-            <div class="col s12" style="margin: 0 auto !important;">
-                <ul class="tabs transparent white-text no-select">
-                    <li class="tab col whitetxt" id="wintrigger"><a href="#win64" class="whitetxt" id="winlabel">Windows (x64)</a></li>
-                    <li class="tab col whitetxt" id="mactrigger"><a class="whitetxt" href="#macos" id="maclabel">macOS</a></li>                </ul>
-            </div>
-        </div>
+    <div class="main-render">
 
-    </div>
-
-    <div class="container" id="contents">
-        <div id="macos">
-            <h1>MacOS</h1>
-            <div class="row">
-                <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares">
-                    <div class="card-panel row soft-card">
-                        <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
-                        <span class="softtitle col s9" v-html="soft.name"></span><br>
-                        <span class="looks-hidden no-select" v-html="soft.short"></span>
-                        <div class="softbtns right no-select">
-                            <a class="btn white black-text" v-on:click="copyLink('m', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
-                            <a class="btn hide-on-small-only red darken-4" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i>下载</a>
-                        </div>
+        <div class="row red darken-3 center-align  z-depth-1" id="tabs" style="position: sticky;top: 0px">
+            <div class="container">
+                <div class="col s12 row" style="margin: 0 auto !important;">
+                    <ul class="tabs transparent white-text no-select col s12 m6">
+                        <li class="tab col whitetxt" id="wintrigger"><a href="#win64" class="whitetxt" id="winlabel">Windows (x64)</a></li>
+                        <li class="tab col whitetxt" id="mactrigger"><a class="whitetxt" href="#macos" id="maclabel">macOS</a></li>
+                    </ul>
+                    <div class="card-panel col s12 m5 l3 right" id="search-box">
+                        <input id="search-text" type="text" placeholder="键入以搜索（可使用缩写）">
                     </div>
                 </div>
             </div>
 
         </div>
-        <div id="win64">
-            <h1>Windows</h1>
-            <div class="row">
-                <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares">
-                    <div class="card-panel row soft-card">
-                        <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
-                        <span class="softtitle col s9" v-html="soft.name"></span><br>
-                        <span class="looks-hidden no-select" v-html="soft.short"></span>
-                        <div class="softbtns right no-select">
-                            <a class="btn white black-text" v-on:click="copyLink('w', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
-                            <a class="btn hide-on-small-only red darken-4" v-bind:href="serverLink+soft.win"><i class="material-icons left">file_download</i>下载</a>
+
+        <div class="container" id="contents">
+
+            <div id="macos">
+                <h1>MacOS</h1>
+                <div class="row">
+                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
+                        <div class="card-panel row soft-card" >
+                            <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
+                            <span class="softtitle col s9" v-html="soft.name"></span><br>
+                            <span class="looks-hidden no-select" v-html="soft.short"></span>
+                            <div class="softbtns right no-select">
+                                <a class="btn white black-text" v-on:click="copyLink('m', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
+                                <a class="btn hide-on-small-only red darken-4" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i>下载</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="win64">
+                <h1>Windows</h1>
+                <div class="row">
+                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
+                        <div class="card-panel row soft-card" >
+                            <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
+                            <span class="softtitle col s9" v-html="soft.name"></span><br>
+                            <span class="looks-hidden no-select" v-html="soft.short"></span>
+                            <div class="softbtns right no-select">
+                                <a class="btn white black-text" v-on:click="copyLink('w', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
+                                <a class="btn hide-on-small-only red darken-4" v-bind:href="serverLink+soft.win"><i class="material-icons left">file_download</i>下载</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br><br><br><br><br>
         </div>
-        <br><br><br><br><br>
     </div>
     <div id="aboutmodal" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h3>关于</h3>
-            <p>@smallg0at 制作            </p>
+            <p>@smallg0at 制作 </p>
             <p>2019-2020 北京大学附属中学 版权所有</p>
-            <p>版本 2.0.0</p>
+            <p>版本 2.1.0</p>
             <h4>更新信息</h4>
-            <p>依赖项更少、脚本重写，更加畅快</p>
+            <p>增加了搜索功能</p>
             <h4>美术资源</h4>
             <p>使用了<a href="http://www.iconarchive.com/show/adobe-cc-circles-icons-by-killaaaron.html"> KillerAaron
                     的图标组</a>并做了一些修改。</p>
@@ -173,6 +183,12 @@
             }
         }
     })
+
+    var searcher = document.querySelector('#search-text')
+    setInterval(function(){
+        display.searchText = searcher.value;
+    },5)//暴力更新
+
     new ClipboardJS('#copybtn');
 
     function copyToClipboard(copytext) {
