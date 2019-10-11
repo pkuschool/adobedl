@@ -28,7 +28,7 @@
 
 /* Main Document CSS */
 html {
-    font-family: 'PingFang SC', '思源黑体', 'Microsoft Yahei UI', monospace;
+    font-family: 'PingFang SC', '思源黑体', 'Microsoft Yahei UI', sans-serif, monospace;
 }
 
 #main-title {
