@@ -48,7 +48,7 @@
 
 const softwareList = [
     {
-        name: 'Acrobat DC',
+        name: 'Acrobat <small>Pro DC</small>',
         short: 'acr',
         icon: 'acrobat.png',
         win: 'Adobe%20Acrobat%20DC%20_Win_X64.zip',
