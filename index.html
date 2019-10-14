@@ -28,25 +28,25 @@
             <span style="width: 100%" id="warnmsg">您没有开启JavaScript，因而无法正常进行操作。</span>
         </div>
     </noscript>
-    <div class="top red darken-4 center-align white-text z-depth-2" style="width: 100%;padding-top: 35px;padding-bottom: 10px;padding-left: 20px;padding-right: 20px;">
-        <h1 class="center-align white-text" id="main-title">北大附中 Adobe 下载中心</h1>
+    <div class="top teal lighten-4 center-align z-depth-2" style="width: 100%;padding-top: 35px;padding-bottom: 10px;padding-left: 20px;padding-right: 20px;">
+        <h1 class="center-align" id="main-title">北大附中 Adobe 下载中心</h1>
         <div id="site-info" class=" hide-on-small-only">
             <p>在这里你可以下载到学校购买的正版 Adobe，无需担心版权问题。所有软件均需要在校内激活。</p>
             <p>您可以使用 Ctrl+F 来寻找软件。安装方法请参照教程。</p>
         </div>
         <div class="row no-select">
-            <a class="btn red lighten-5 black-text rounded" href="https://mp.weixin.qq.com/s/AnYEDpmjStCpbPbMNd8IWg" target="_blank"><i class="material-icons left">book</i>教程</a>
-            <a data-target="aboutmodal" class="btn modal-trigger red lighten-5 black-text rounded"><i class="material-icons left">info</i>关于</a>
+            <a class="btn teal lighten-4 black-text rounded" href="https://mp.weixin.qq.com/s/AnYEDpmjStCpbPbMNd8IWg" target="_blank"><i class="material-icons left">book</i>教程</a>
+            <a data-target="aboutmodal" class="btn modal-trigger teal lighten-4 black-text rounded"><i class="material-icons left">info</i>关于</a>
         </div>
     </div>
     <div class="main-render">
 
-        <div class="row red darken-3 center-align  z-depth-1" id="tabs" style="position: sticky;top: 0px">
+        <div class="row teal lighten-3 center-align  z-depth-1" id="tabs" style="position: sticky;top: 0px">
             <div class="container">
                 <div class="col s12 row" style="margin: 0 auto !important;">
                     <ul class="tabs transparent white-text no-select col s12 m6">
-                        <li class="tab col whitetxt" id="wintrigger"><a href="#win64" class="whitetxt" id="winlabel">Windows (x64)</a></li>
-                        <li class="tab col whitetxt" id="mactrigger"><a class="whitetxt" href="#macos" id="maclabel">macOS</a></li>
+                        <li class="tab col black-text" id="wintrigger"><a href="#win64" class="black-text" id="winlabel">Windows (x64)</a></li>
+                        <li class="tab col black-text" id="mactrigger"><a class="black-text" href="#macos" id="maclabel">macOS</a></li>
                     </ul>
                     <div class="card-panel col s12 m5 l3 right" id="search-box">
                         <input id="search-text" type="text" placeholder="键入以搜索（可使用缩写）">
@@ -64,11 +64,9 @@
                     <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
                         <div class="card-panel row soft-card" >
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
-                            <span class="softtitle col s9" v-html="soft.name"></span><br>
-                            <span class="looks-hidden no-select" v-html="soft.short"></span>
-                            <div class="softbtns right no-select">
+                            <span class="softtitle col s9" v-html="soft.name"></span><br>                            <div class="softbtns right no-select">
                                 <a class="btn white black-text" v-on:click="copyLink('m', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
-                                <a class="btn hide-on-small-only red darken-4" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i>下载</a>
+                                <a class="btn hide-on-small-only teal darken-1" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i>下载</a>
                             </div>
                         </div>
                     </div>
@@ -82,10 +80,9 @@
                         <div class="card-panel row soft-card" >
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
-                            <span class="looks-hidden no-select" v-html="soft.short"></span>
                             <div class="softbtns right no-select">
                                 <a class="btn white black-text" v-on:click="copyLink('w', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
-                                <a class="btn hide-on-small-only red darken-4" v-bind:href="serverLink+soft.win"><i class="material-icons left">file_download</i>下载</a>
+                                <a class="btn hide-on-small-only teal darken-1" v-bind:href="serverLink+soft.win"><i class="material-icons left">file_download</i>下载</a>
                             </div>
                         </div>
                     </div>
@@ -99,8 +96,9 @@
             <h3>关于</h3>
             <p>@smallg0at 制作 </p>
             <p>2019-2020 北京大学附属中学 版权所有</p>
-            <p>版本 2.1.1</p>
+            <p>版本 2.1.2</p>
             <h4>更新信息</h4>
+            <p>2.1.2 - 调亮了UI / 更换色调</p>
             <p>2.1.1 - 修复了搜索的大小写问题</p>
             <p>2.1.0 - 增加了搜索功能</p>
             <p>2.0.0 - 重构/轻量化</p>
