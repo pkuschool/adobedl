@@ -111,7 +111,7 @@ const softwareList = [
         mac: 'ID_Mac.zip'
     },
     {
-        name: 'Lightroom <small><small>Classic</small></small>',
+        name: 'Lightroom <small>Classic</small>',
         short: 'lr',
         icon: 'Lr.png',
         win: 'Lr_Win64.zip',

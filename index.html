@@ -61,7 +61,7 @@
             <div id="macos">
                 <h1>MacOS</h1>
                 <div class="row">
-                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
+                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
                         <div class="card-panel row soft-card" >
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
@@ -78,7 +78,7 @@
             <div id="win64">
                 <h1>Windows</h1>
                 <div class="row">
-                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
+                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
                         <div class="card-panel row soft-card" >
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
@@ -99,9 +99,11 @@
             <h3>关于</h3>
             <p>@smallg0at 制作 </p>
             <p>2019-2020 北京大学附属中学 版权所有</p>
-            <p>版本 2.1.0</p>
+            <p>版本 2.1.1</p>
             <h4>更新信息</h4>
-            <p>增加了搜索功能</p>
+            <p>2.1.1 - 修复了搜索的大小写问题</p>
+            <p>2.1.0 - 增加了搜索功能</p>
+            <p>2.0.0 - 重构/轻量化</p>
             <h4>美术资源</h4>
             <p>使用了<a href="http://www.iconarchive.com/show/adobe-cc-circles-icons-by-killaaaron.html"> KillerAaron
                     的图标组</a>并做了一些修改。</p>
@@ -186,7 +188,9 @@
 
     var searcher = document.querySelector('#search-text')
     setInterval(function(){
-        display.searchText = searcher.value;
+
+        let a = searcher.value;
+        display.searchText = a.toLowerCase()
     },5)//暴力更新
 
     new ClipboardJS('#copybtn');
