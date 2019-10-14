@@ -118,9 +118,10 @@
     </div>
 </body>
 <button class="hide" id="copybtn" data-clipboard-text=""></button>
-<script src="./js/init.js"></script>
 <script src="./js/dl.js"></script>
 <script>
+    var tabsInstance = M.Tabs.init(document.querySelectorAll('.tabs'))
+    var modalInstance = M.Modal.init(document.querySelectorAll('.modal'))
     var maclabel = document.querySelector('#maclabel')
     var winlabel = document.querySelector('#winlabel')
     if (client.browser.safari) {
