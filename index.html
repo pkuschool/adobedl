@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <script>
         if (client.browser.ie && clent.browser.ie <= 8) {
-            window.location.assign("./uns/index.html")
+            window.location.assign("./unsupported.html")
         }
     </script>
 </head>
@@ -62,9 +62,10 @@
                 <h1>MacOS</h1>
                 <div class="row">
                     <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
-                        <div class="card-panel row soft-card" >
+                        <div class="card-panel row soft-card">
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
-                            <span class="softtitle col s9" v-html="soft.name"></span><br>                            <div class="softbtns right no-select">
+                            <span class="softtitle col s9" v-html="soft.name"></span><br>
+                            <div class="softbtns right no-select">
                                 <a class="btn white black-text" v-on:click="copyLink('m', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
                                 <a class="btn hide-on-small-only teal darken-1" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i>下载</a>
                             </div>
@@ -77,7 +78,7 @@
                 <h1>Windows</h1>
                 <div class="row">
                     <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
-                        <div class="card-panel row soft-card" >
+                        <div class="card-panel row soft-card">
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
                             <div class="softbtns right no-select">
@@ -125,7 +126,7 @@
     if (client.browser.safari) {
         M.toast({
             html: '不建议使用 Safari 浏览此网页，否则此网页可能不会正常工作。<br>建议使用 Chrome 等浏览器。',
-            diaplayLength: 15000
+            diaplayLength: Infinity
         })
     }
     if (client.system.mac) {
@@ -139,7 +140,7 @@
             M.toast({
                 html: '您目前正在使用的设备的硬件架构非 x64（即为x86、ARM或ARM64），这些软件不一定能正常运行。',
                 classes: 'yellow black-text bold',
-                displayLength: 15000
+                displayLength: Infinity
             })
         }
         if (client.system.win == 'XP' || client.system.win == '2000' || client.system.win == 'ME') {
@@ -154,7 +155,7 @@
         M.toast({
             html: '⚠ 注意！</br>您正在使用移动端系统，这些软件*不支持*在此操作系统上使用。下载前请务必三思。<br>',
             classes: 'yellow black-text bold',
-            displayLength: 200000
+            displayLength: Infinity
         })
     }
 
@@ -185,11 +186,19 @@
     })
 
     var searcher = document.querySelector('#search-text')
-    setInterval(function(){
-
+    try {
+        searcher.addEventListener('input', () => {
+            let a = searcher.value;
+            display.searchText = a.toLowerCase()
+        })
+        console.log('Attatched Event')
+    } catch (error) {
+        console.error(error)
+    }
+    searcher.addEventListener('change', () => {
         let a = searcher.value;
         display.searchText = a.toLowerCase()
-    },5)//暴力更新
+    })
 
     new ClipboardJS('#copybtn');
 
