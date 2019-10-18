@@ -144,3 +144,16 @@ iframe{
     height: 33px;
 }
 
+.btn-framed{
+    box-shadow: none;
+    border-radius: 5px;
+    border: 1.5px black solid;
+    padding-bottom: 5px;
+    height: 38px;
+    background-color: transparent;
+}
+
+.btn-framed:hover, .btn-framed:active{
+    box-shadow: none;
+    background-color: white;
+}
