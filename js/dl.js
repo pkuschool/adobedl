@@ -65,7 +65,7 @@ const softwareList = [
         name: 'Illustrator',
         short: 'ai',
         icon: 'Ai.png',
-        win: 'Ai_Win64.zip',
+        win: 'Ai_win64.zip',
         mac: 'Ai_Mac.zip'
     },
     {
@@ -79,14 +79,14 @@ const softwareList = [
         name: 'Animator',
         short: 'an',
         icon: 'An.png',
-        win: 'An_Win64.zip',
+        win: 'An_win64.zip',
         mac: 'An_Mac.zip'
     },
     {
         name: 'Bridge',
         short: 'br',
         icon: 'Br.png',
-        win: 'Br_Win64.zip',
+        win: 'Br_win64.zip',
         mac: 'Br_Mac.zip'
     },
     {
@@ -107,7 +107,7 @@ const softwareList = [
         name: 'InDesign',
         short: 'id',
         icon: 'Id.png',
-        win: 'ID_Win64.zip',
+        win: 'ID_win64.zip',
         mac: 'ID_Mac.zip'
     },
     {
@@ -128,14 +128,14 @@ const softwareList = [
         name: 'Prelude',
         short: 'pl',
         icon: 'Pl.png',
-        win: 'Pl_Win64.zip',
+        win: 'Pl_win64.zip',
         mac: 'Pl_Mac.zip'
     },
     {
         name: 'Premiere Pro',
         short: 'pr',
         icon: 'Pr.png',
-        win: 'Pr_Win64.zip',
+        win: 'Pr_win64.zip',
         mac: 'Pr_Mac.zip'
     },
     {
