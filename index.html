@@ -123,12 +123,12 @@
     var modalInstance = M.Modal.init(document.querySelectorAll('.modal'))
     var maclabel = document.querySelector('#maclabel')
     var winlabel = document.querySelector('#winlabel')
-    if (client.browser.safari) {
-        M.toast({
-            html: '不建议使用 Safari 浏览此网页，否则此网页可能不会正常工作。<br>建议使用 Chrome 等浏览器。',
-            diaplayLength: Infinity
-        })
-    }
+    // if (client.browser.safari) {
+    //     M.toast({
+    //         html: '不建议使用 Safari 浏览此网页，否则此网页可能不会正常工作。<br>建议使用 Chrome 等浏览器。',
+    //         diaplayLength: Infinity
+    //     })
+    // }
     if (client.system.mac) {
         maclabel.classList.add('active')
         maclabel.innerHTML = 'macOS（当前操作系统）'
@@ -151,7 +151,7 @@
 
     }
     document.querySelector('#clientinfo').innerHTML = clientInformation.userAgent
-    if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+    if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android|ios)/i)) {
         M.toast({
             html: '⚠ 注意！</br>您正在使用移动端系统，这些软件*不支持*在此操作系统上使用。下载前请务必三思。<br>',
             classes: 'yellow black-text bold',
