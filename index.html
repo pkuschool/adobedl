@@ -66,7 +66,7 @@
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
                             <div class="softbtns right no-select">
                                 <a class="btn white black-text" v-on:click="copyLink('m', index)" title="复制下载链接"><i class="material-icons">content_copy</i></a>
-                                <a class="btn hide-on-small-only teal darken-1" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i>下载</a>
+                                <a class="btn teal darken-1" v-bind:href="serverLink+soft.mac"><i class="material-icons left">file_download</i><span class="dl-label">下载</span></a>
                             </div>
                         </div>
                     </div>
