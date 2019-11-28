@@ -46,6 +46,8 @@
                     <ul class="tabs transparent white-text no-select col s12 m6">
                         <li class="tab col black-text" id="wintrigger"><a href="#win64" class="black-text" id="winlabel">Windows (x64)</a></li>
                         <li class="tab col black-text" id="mactrigger"><a class="black-text" href="#macos" id="maclabel">macOS</a></li>
+                        <li class="tab col black-text" id="patchtrigger"><a class="black-text" href="#patch" id="patchlabel">续期补丁</a></li>
+
                     </ul>
                     <div class="card-panel col s12 m5 l3 right" id="search-box">
                         <input id="search-text" type="text" placeholder="键入以搜索（可使用缩写）">
@@ -56,7 +58,28 @@
         </div>
 
         <div class="container" id="contents">
-
+            <div id="patch">
+                <h1>续期补丁</h1>
+                <p>Windows 版直接按照程序内指引操作即可，macOS 版请按照相关教程文章（敬请期待）操作。</p>
+                <div class="row">
+                    <div class="col s12 l6 soft-container">
+                        <div class="card-panel row soft-card">
+                            <span class="softtitle col s9">Windows</span><br>
+                            <div class="softbtns right no-select">
+                                <a class="btn teal darken-1" target="_blank" href="https://bdfz-my.sharepoint.com/:u:/g/personal/liuyuchen1_i_pkuschool_edu_cn/EU8fHL1QsTtJmHG_BMRt5KUBY3Bs45EcKGFSHkcW-e_m-A?e=zaGxhz"><i class="material-icons left">file_download</i><span class="dl-label">前往下载</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l6 soft-container">
+                        <div class="card-panel row soft-card">
+                            <span class="softtitle col s9">macOS</span><br>
+                            <div class="softbtns right no-select">
+                                <a class="btn teal darken-1" target="_blank" href="https://bdfz-my.sharepoint.com/:u:/g/personal/liuyuchen1_i_pkuschool_edu_cn/EQ9vCD8rUQJKggJMNPa3zBoBReT2qKsSeh9il7Uyx_Biug?e=44S9qU"><i class="material-icons left">file_download</i><span class="dl-label">前往下载</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="macos">
                 <h1>MacOS</h1>
                 <div class="row">
@@ -88,6 +111,7 @@
                     </div>
                 </div>
             </div>
+
             <br><br><br><br><br>
         </div>
     </div>
@@ -129,6 +153,11 @@
     //         diaplayLength: Infinity
     //     })
     // }
+    M.toast({
+        html: '⚠ 如在2019年11月及以前下载过相关软件，请前往续期补丁分类下载补丁。',
+        classes: 'yellow black-text bold',
+        displayLength: Infinity
+    })
     if (client.system.mac) {
         maclabel.classList.add('active')
         maclabel.innerHTML = 'macOS（当前操作系统）'
