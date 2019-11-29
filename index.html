@@ -36,6 +36,8 @@
         <div class="row no-select">
             <a class="btn btn-framed  black-text rounded" href="https://mp.weixin.qq.com/s/oCp2uOcnGoFVDtxmCjAw8w" target="_blank">教程</a>
             <a data-target="aboutmodal" class="btn btn-framed modal-trigger black-text rounded">关于</a>
+            <a data-target="patchmodal" class="btn btn-framed modal-trigger black-text rounded">续期补丁</a>
+
         </div>
     </div>
     <div class="main-render">
@@ -46,8 +48,6 @@
                     <ul class="tabs transparent white-text no-select col s12 m6">
                         <li class="tab col black-text" id="wintrigger"><a href="#win64" class="black-text" id="winlabel">Windows (x64)</a></li>
                         <li class="tab col black-text" id="mactrigger"><a class="black-text" href="#macos" id="maclabel">macOS</a></li>
-                        <li class="tab col black-text" id="patchtrigger"><a class="black-text" href="#patch" id="patchlabel">续期补丁</a></li>
-
                     </ul>
                     <div class="card-panel col s12 m5 l3 right" id="search-box">
                         <input id="search-text" type="text" placeholder="键入以搜索（可使用缩写）">
@@ -58,32 +58,10 @@
         </div>
 
         <div class="container" id="contents">
-            <div id="patch">
-                <h1>续期补丁</h1>
-                <p>Windows 版直接按照程序内指引操作即可，macOS 版请按照相关教程文章（敬请期待）操作。</p>
-                <div class="row">
-                    <div class="col s12 l6 soft-container">
-                        <div class="card-panel row soft-card">
-                            <span class="softtitle col s9">Windows</span><br>
-                            <div class="softbtns right no-select">
-                                <a class="btn teal darken-1" target="_blank" href="https://bdfz-my.sharepoint.com/:u:/g/personal/liuyuchen1_i_pkuschool_edu_cn/EU8fHL1QsTtJmHG_BMRt5KUBY3Bs45EcKGFSHkcW-e_m-A?e=zaGxhz"><i class="material-icons left">file_download</i><span class="dl-label">前往下载</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 l6 soft-container">
-                        <div class="card-panel row soft-card">
-                            <span class="softtitle col s9">macOS</span><br>
-                            <div class="softbtns right no-select">
-                                <a class="btn teal darken-1" target="_blank" href="https://bdfz-my.sharepoint.com/:u:/g/personal/liuyuchen1_i_pkuschool_edu_cn/EQ9vCD8rUQJKggJMNPa3zBoBReT2qKsSeh9il7Uyx_Biug?e=44S9qU"><i class="material-icons left">file_download</i><span class="dl-label">前往下载</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="macos">
+            <div id="macos" style="display: none;">
                 <h1>MacOS</h1>
                 <div class="row">
-                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
+                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-show="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
                         <div class="card-panel row soft-card">
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
@@ -96,10 +74,10 @@
                 </div>
 
             </div>
-            <div id="win64">
+            <div id="win64" style="display: block;" class="active">
                 <h1>Windows</h1>
                 <div class="row">
-                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-if="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
+                    <div class="col s12 l6 soft-container" v-for="(soft, index) in softwares" v-show="soft.name.toLowerCase().indexOf(searchText) != -1 || soft.short.indexOf(searchText) != -1">
                         <div class="card-panel row soft-card">
                             <img v-bind:src="'./img/'+soft.icon" alt="" class="softimg col">
                             <span class="softtitle col s9" v-html="soft.name"></span><br>
@@ -120,7 +98,7 @@
             <h3>关于</h3>
             <p>@smallg0at 制作 </p>
             <p>2019-2020 北京大学附属中学 版权所有</p>
-            <p>版本 2.1.4</p>
+            <p>版本 2.1.5</p>
             <h4>更新信息</h4>
             <p>2.1.2 - 调亮了UI / 更换色调</p>
             <p>2.1.1 - 修复了搜索的大小写问题</p>
@@ -137,6 +115,34 @@
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat col s12">关闭</a>
+        </div>
+    </div>
+    <div id="patchmodal" class="modal modal-fixed-footer">
+        <div class="modal-content teal lighten-4">
+            <h1>续期补丁</h1>
+            <p>Windows 版直接按照程序内指引操作即可，macOS 版请按照相关教程文章（敬请期待）操作。</p>
+            <div class="row">
+                <div class="col s12 soft-container">
+                    <div class="card-panel row soft-card">
+                        <span class="softtitle col">Windows</span><br>
+                        <div class="softbtns right no-select">
+                            <a class="btn teal darken-1" target="_blank" href="https://bdfz-my.sharepoint.com/:u:/g/personal/liuyuchen1_i_pkuschool_edu_cn/EU8fHL1QsTtJmHG_BMRt5KUBY3Bs45EcKGFSHkcW-e_m-A?e=zaGxhz"><i class="material-icons left">file_download</i><span class="dl-label">前往下载</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 soft-container">
+                    <div class="card-panel row soft-card">
+                        <span class="softtitle col">macOS</span><br>
+                        <div class="softbtns right no-select">
+                            <a class="btn teal darken-1" target="_blank" href="https://bdfz-my.sharepoint.com/:u:/g/personal/liuyuchen1_i_pkuschool_edu_cn/EQ9vCD8rUQJKggJMNPa3zBoBReT2qKsSeh9il7Uyx_Biug?e=44S9qU"><i class="material-icons left">file_download</i><span class="dl-label">前往下载</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer teal darken-1">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text col s12">关闭</a>
         </div>
     </div>
 </body>
@@ -159,7 +165,8 @@
         displayLength: Infinity
     })
     if (client.system.mac) {
-        maclabel.classList.add('active')
+        // maclabel.classList.add('active')
+        maclabel.click()
         maclabel.innerHTML = 'macOS（当前操作系统）'
 
     }
@@ -188,8 +195,34 @@
         })
     }
 
-    var display = new Vue({
-        el: '#contents',
+    var winDisplay = new Vue({
+        el: '#win64',
+        data: {
+            softwares: softwareList,
+            searchText: "",
+            serverLink: "http://portal.pkuschool.edu.cn:81/adobe/"
+        },
+        methods: {
+            copyLink: function(plfm, id) {
+                if (plfm == 'm') {
+                    copyToClipboard(this.serverLink + this.softwares[id].mac)
+                    M.toast({
+                        html: '已复制链接: ' + this.softwares[id].name
+                    })
+                } else if (plfm == 'w') {
+
+                    copyToClipboard(this.serverLink + display.softwares[id].win)
+                    M.toast({
+                        html: '已复制链接: ' + this.softwares[id].name
+                    })
+
+                }
+            }
+        }
+    })
+
+    var macDisplay = new Vue({
+        el: '#macos',
         data: {
             softwares: softwareList,
             searchText: "",
@@ -218,7 +251,8 @@
     try {
         searcher.addEventListener('input', () => {
             let a = searcher.value;
-            display.searchText = a.toLowerCase()
+            macDisplay.searchText = a.toLowerCase();
+            winDisplay.searchText = a.toLowerCase()
         })
         console.log('Attatched Event')
     } catch (error) {
