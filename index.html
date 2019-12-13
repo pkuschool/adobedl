@@ -120,8 +120,9 @@
     <div id="patchmodal" class="modal modal-fixed-footer">
         <div class="modal-content teal lighten-4">
             <h1>续期补丁</h1>
-            <p>Windows 版直接按照程序内指引操作即可，macOS 版请按照相关教程文章（敬请期待）操作。</p>
-            <div class="row">
+            <p>Windows 版直接按照程序内指引操作即可，macOS 版请按照相关教程文章操作。</p>
+            <a href="https://mp.weixin.qq.com/s/lQXpu_au3M7i2vr9_sLZaw" class="btn btn-framed black-text">教程文章</a>
+            <div class="row" style="margin-top: 15px;">
                 <div class="col s12 soft-container">
                     <div class="card-panel row soft-card">
                         <span class="softtitle col">Windows</span><br>
@@ -160,9 +161,9 @@
     //     })
     // }
     M.toast({
-        html: '⚠ 如在2019年11月及以前下载过相关软件，请前往续期补丁分类下载补丁。',
-        classes: 'yellow black-text bold',
-        displayLength: Infinity
+        html: '⚠ 如提示序列号无效/7天试用期，请前往续期补丁分类下载补丁。',
+        // classes: 'yellow black-text bold',
+        displayLength: 15000
     })
     if (client.system.mac) {
         // maclabel.classList.add('active')
