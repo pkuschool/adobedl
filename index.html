@@ -169,7 +169,13 @@
         // maclabel.classList.add('active')
         maclabel.click()
         maclabel.innerHTML = 'macOS（当前操作系统）'
-
+        if(/Mac OS X 10[._ ]1[56]/.test(navigator.userAgent)){
+            M.toast({
+                html: '您目前正在使用的 MacOS 版本为 Catalina 及以上，只支持 64 位软件，这些软件不一定能正常运行。',
+                classes: 'yellow black-text bold',
+                displayLength: Infinity
+            })
+        }
     }
     if (client.system.win) {
         if (!(clientInformation.userAgent).indexOf('x64')) {
