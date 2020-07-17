@@ -76,7 +76,7 @@ const softwareList = [
         mac: 'Au_Mac.zip'
     },
     {
-        name: 'Animator',
+        name: 'Animate',
         short: 'an',
         icon: 'An.png',
         win: 'An_win64.zip',
