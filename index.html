@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.15/darkreader.min.js"></script>
 
     <!-- Customs go the last! -->
     <link rel="stylesheet" href="./css/main.css">
@@ -28,6 +29,12 @@
             <span style="width: 100%" id="warnmsg">您没有开启JavaScript，因而无法正常进行操作。</span>
         </div>
     </noscript>
+    <div style="position: fixed;top:0;bottom: 0;left: 0;right: 0;background-color: rgb(34, 82, 79);z-index: 100000;" id="dark-cover"></div>
+    <script>
+        if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.querySelector('#dark-cover').style.display = "none"
+        }
+    </script>
     <div class="top teal lighten-4 center-align z-depth-2" style="width: 100%;padding-top: 35px;padding-bottom: 10px;padding-left: 20px;padding-right: 20px;">
         <h1 class="center-align" id="main-title">北大附中 Adobe 下载中心</h1>
         <div id="site-info" class=" hide-on-small-only">
@@ -266,6 +273,7 @@
 
     new ClipboardJS('#copybtn');
 
+
     function copyToClipboard(copytext) {
         var cpybtn = document.querySelector('#copybtn');
         cpybtn.setAttribute('data-clipboard-text', copytext)
@@ -275,3 +283,12 @@
 </script>
 
 </html>
+<script>
+    DarkReader.setFetchMethod(window.fetch)
+    DarkReader.auto({
+        sepia: 0
+    })
+    setTimeout(() => {
+        document.querySelector('#dark-cover').style.display = "none"
+    }, 2500)
+</script>
