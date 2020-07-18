@@ -185,7 +185,7 @@
         }
     }
     if (client.system.win) {
-        if (!(clientInformation.userAgent).indexOf('x64')) {
+        if (!(navigator.userAgent).indexOf('x64')) {
             // winlabel.innerHTML = 'Windows (64位)（当前操作系统）'
             M.toast({
                 html: '您目前正在使用的设备的硬件架构非 x64（即为x86、ARM或ARM64），这些软件不一定能正常运行。',
@@ -200,7 +200,7 @@
         }
 
     }
-    document.querySelector('#clientinfo').innerHTML = clientInformation.userAgent
+    document.querySelector('#clientinfo').innerHTML = navigator.userAgent
     if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android|ios)/i)) {
         M.toast({
             html: '⚠ 注意！</br>您正在使用移动端系统，这些软件*不支持*在此操作系统上使用。下载前请务必三思。<br>',
